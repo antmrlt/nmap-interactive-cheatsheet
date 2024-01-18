@@ -1,7 +1,4 @@
 body {
-    background-image: url(image/bg.jpg);
-    background-size: 150%;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,40 +9,21 @@ body {
     background-color: #1a1a1a;
 }
 
-@media screen and (max-width: 1630px){
-    body {
-        background-size: 200%;
-    }
-}
-
-@media screen and (max-width: 1240px){
-    body {
-        background-size: 250%;
-    }
-}
-
-@media screen and (max-width: 1100px){
-    body {
-        background-size: 300%;
-    }
-}
-
 /* main container */
 
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 /* title */
 
 .title {
-    color: #ffffff;
+    color: #d8d8d8;
     text-align: center;
     margin-top: 100px;
-    font-size: 50px;
+    font-size: 3vw;
     display: flex;
     justify-content: center;
 }
@@ -63,29 +41,36 @@ body {
     padding: 50px 0px;
 }
 
-.input input {
+.input textarea {
+    /* padding: 70px 0px 70px 80px;
+    border: none;
+    font-size: 2vw;
+    line-height: 15px;
+    background-color: #404040;
+    color: #d8d8d8;
+    width: 1000px;
+    overflow: auto;
+    text-align: center;
+    resize: none;
+    white-space: nowrap;
+
+    scrollbar-color: #606060 #404040;
+    scrollbar-width: thin; */
+
+    display: table-cell;
+    vertical-align: middle;
+
+    white-space: nowrap;
+    background-color: #404040;
+    resize: none;
+    border: none;
+    color: #d8d8d8;
     width: 1000px;
 
-   display: flex;
-   align-items: center;
+    padding: 80px 0px 80px 80px;
+    font-size: 2vw;
 
-    background-color: rgba(255, 255, 255, 0.5);
-   -webkit-backdrop-filter: saturate(200%) blur(5px);
-    backdrop-filter: saturate(180%) blur(20px);
-
-    color: black;
-
-    padding: 0px 30px;
-
-    font-size: 20px;
-
-    border: none;
-
-    border-radius: 5px 0px 0px 5px;
-}
-
-.input input:focus {
-    outline: none;
+    line-height: 17px;
 }
 
 .input textarea::-webkit-scrollbar {
@@ -106,24 +91,14 @@ body {
     outline: none;
 }
 
-@media screen and (max-width: 1200px) {
-    .input input {
-        width: 700px;
-    }
-}
-
 /* copy */
 
 .copy {
-    background-color: rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: saturate(200%) blur(5px);
-    backdrop-filter: saturate(180%) blur(20px);
+    background-color: #404040;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    border-radius: 0px 5px 5px 0px;
 
     gap: 10px;
 
@@ -133,11 +108,9 @@ body {
 .copy button {
     height: 100%;
     cursor: pointer;
-    background-color: white;
+    background-color: #d8d8d8;
     border: none;
     padding: 0px 10px;
-
-    background-color: transparent;
 }
 
 /* checknoxes */
@@ -155,7 +128,7 @@ body {
 }
 
 .scanTechniques h1 {
-    color: white;
+    color: #d8d8d8;
     cursor: pointer;
 
     margin: 10px 0px;
@@ -168,14 +141,8 @@ body {
 }
 
 label {
-    color: white;
+    color: #d8d8d8;
     font-size: 19px;
-}
-
-@media screen and (max-width: 1200px) {
-    .scanTechniques {
-        width: 700px;
-    }
 }
 
 
