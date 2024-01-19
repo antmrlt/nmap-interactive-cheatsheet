@@ -99,3 +99,18 @@ function Reset() {
     var scanOptionsInput = document.getElementById("myInput");
     scanOptionsInput.value = "nmap 192.168.1.1";
 }
+
+/* Dark mode */
+
+function darkLight() {
+    var body = document.body;
+    var checkbox = document.querySelector('.switch input[type="checkbox"]');
+    var label = document.getElementById("label")
+
+    if (checkbox.checked) {
+        body.style.backgroundColor = '#333';
+        body.style.backgroundImage = 'none';
+    } else {
+        body.style.backgroundImage = 'url(image/bg.jpg)';
+    }
+}

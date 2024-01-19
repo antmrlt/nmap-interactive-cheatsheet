@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Cheatsheet</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="image/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/switch.css">
 </head>
 <body>
+  <div class="btn-container">
+        <label class="switch btn-color-mode-switch">
+              <input value="1" id="color_mode" name="color_mode" type="checkbox" onchange="darkLight()">
+              <label class="btn-color-mode-switch-inner" data-off="Light" data-on="Dark" for="color_mode"></label>
+          </label>
+    </div>
     <div class="container">
         <div class="title">
             <h1>Nmap interactive cheatsheet</h1>
@@ -27,7 +34,7 @@
                 <h1 id="1">Scan Techniques ></h1>
         
                 <div class="checkboxes checkbox-wrapper-3">
-                    <label for="sS">-sS (TCP SYN port scan (Default))</label>
+                    <label id="label" for="sS">-sS (TCP SYN port scan (Default))</label>
                     <input type="checkbox" id="sS" onchange="updateScanOptions(this)">
                 </div> 
     
