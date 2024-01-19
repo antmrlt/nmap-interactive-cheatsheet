@@ -102,15 +102,41 @@ function Reset() {
 
 /* Dark mode */
 
-function darkLight() {
+// Function to set the mode and store it in localStorage
+function setMode(mode) {
     var body = document.body;
     var checkbox = document.querySelector('.switch input[type="checkbox"]');
-    var label = document.getElementById("label")
 
-    if (checkbox.checked) {
-        body.style.backgroundColor = '#333';
-        body.style.backgroundImage = 'none';
+    if (mode === 'dark') {
+        body.style.backgroundImage = 'url(image/bgdark.jpg)';
+        checkbox.checked = true;
+        localStorage.setItem('mode', 'dark');
     } else {
         body.style.backgroundImage = 'url(image/bg.jpg)';
+        checkbox.checked = false;
+        localStorage.setItem('mode', 'light');
     }
 }
+
+// Function to toggle mode on checkbox change
+function darkLight() {
+    var checkbox = document.querySelector('.switch input[type="checkbox"]');
+    if (checkbox.checked) {
+        setMode('dark');
+    } else {
+        setMode('light');
+    }
+}
+
+// Function to get the mode from localStorage on page load
+function initMode() {
+    var savedMode = localStorage.getItem('mode');
+    if (savedMode === 'dark') {
+        setMode('dark');
+    } else {
+        setMode('light');
+    }
+}
+
+// Call initMode on page load
+window.addEventListener('load', initMode);
