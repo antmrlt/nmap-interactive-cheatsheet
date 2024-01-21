@@ -108,3 +108,8 @@
   background: #fff;
 }
 
+@media screen and (max-width: 900px) {
+  .btn-container {
+      display: none;
+  }
+}
