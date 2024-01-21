@@ -194,6 +194,12 @@ label {
     color: white;
 }
 
+@media screen and (min-width: 900px) {
+    .phone-format {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .title, .input, .checkboxes-container {
         display: none;
