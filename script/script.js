@@ -78,13 +78,18 @@ function nseuseful(checkbox) {
 
 function Copy() {
     var copyText = document.getElementById("myInput");
+    var message = document.getElementById("copy");
   
     copyText.select();
     copyText.setSelectionRange(0, 99999);
   
     navigator.clipboard.writeText(copyText.value);
-    
-    alert("Copied the text: " + copyText.value);
+
+    message.style.display = "block";
+
+    setTimeout(function() {
+        message.style.display = "none";
+    }, 3000);
 }
 
 /* Reset */

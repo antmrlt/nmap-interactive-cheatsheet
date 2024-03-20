@@ -181,6 +181,32 @@ label {
     }
 }
 
+/* copy message */
+
+.copy-message {
+    display: none;
+
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    padding: 20px;
+    border-radius: 20px;
+
+    max-width: 20%;
+
+    background-color: #8861ffe1;
+    border: solid 1px #8B63FF;
+}
+
+.copy-message h3 {
+    margin: 0;
+}
+
+.copy-message p {
+    margin: 0;
+}
+
 /* phone format */
 
 .phone-format {
