@@ -25,6 +25,12 @@ body {
     }
 }
 
+@media screen and (max-width: 900px){
+    body {
+        height: 100vh;
+    }
+}
+
 /* main container */
 
 .container {
@@ -175,5 +181,24 @@ label {
     }
 }
 
+/* phone format */
 
+.phone-format {
+    width: 80%;
+}
 
+.phone-format h1, h3, p, a {
+    color: white;
+}
+
+@media screen and (min-width: 900px) {
+    .phone-format {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .title, .input, .checkboxes-container {
+        display: none;
+    }
+}
