@@ -7,17 +7,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="image/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/switch.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="btn-container">
-        <label class="switch btn-color-mode-switch">
-              <input value="1" id="color_mode" name="color_mode" type="checkbox" onchange="darkLight()">
-              <label class="btn-color-mode-switch-inner" data-off="Light" data-on="Dark" for="color_mode"></label>
-          </label>
-    </div>
     <div class="container">
         <div class="title">
-            <h1>Nmap interactive cheatsheet</h1>
+            <h1>NMAP INTERACTIVE</h1>
+            <h1 style="background-image: url(image/degradécheatsheet.png); background-repeat: no-repeat;">CHEATSHEET</h1>
         </div>
         <div class="input">
             <input type="text" name="" id="myInput" value="nmap 192.168.1.1" readonly></input>
@@ -33,7 +32,7 @@
             <div class="scanTechniques">
                 <h1 id="1">Scan Techniques ></h1>
         
-                <div class="checkboxes checkbox-wrapper-3">
+                <div class="checkboxes checkbox-wrapper-3 mtop10">
                     <label id="label" for="sS">-sS (TCP SYN port scan (Default))</label>
                     <input type="checkbox" id="sS" onchange="updateScanOptions(this)">
                 </div> 
@@ -69,7 +68,7 @@
             <div class="scanTechniques">
                 <h1 id="2">Host Discovery ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="sL">-sL (No Scan. List targets only)</label>
                   <input type="checkbox" id="sL" onchange="updateScanOptions(this)">
                 </div>
@@ -115,7 +114,7 @@
             <div class="scanTechniques">
                 <h1 id="3">Port Specification ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="p">-p <port number> (Port scan for port <port number>)</label>
                   <input type="checkbox" id="p 80" onchange="updateScanOptions(this)">
                 </div>
@@ -166,7 +165,7 @@
             <div class="scanTechniques">
                 <h1 id="4">Service and Version Detection ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="sV">-sV (Attempts to determine the version of the service running on port)</label>
                   <input type="checkbox" id="sV" onchange="updateScanOptions(this)">
                 </div>
@@ -197,7 +196,7 @@
             <div class="scanTechniques">
                 <h1 id="5">OS Detection ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="O">-O (Remote OS detection using TCP/IP stack fingerprinting)</label>
                   <input type="checkbox" id="O" onchange="updateScanOptions(this)">
                 </div>
@@ -228,7 +227,7 @@
             <div class="scanTechniques">
                 <h1 id="6">Timing and Performance ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="T0">-T0 (Paranoid (0) Intrusion Detection System evasion)</label>
                   <input type="checkbox" id="T0" onchange="updateScanOptions(this)">
                 </div>
@@ -264,7 +263,7 @@
             <div class="scanTechniques">
                 <h1 id="7">Timing and Performance Switches ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="host-timeout">-host-timeout 'time' (Give up on target after this long)</label>
                   <input type="checkbox" id="host-timeout 1s" onchange="updateScanOptions(this)">
                 </div>
@@ -306,7 +305,7 @@
             <div class="scanTechniques">
                 <h1 id="8">NSE Scripts ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="sC">-sC (Scan with default NSE scripts. Considered useful for discovery and safe)</label>
                   <input type="checkbox" id="sC" onchange="updateScanOptions(this)">
                 </div>
@@ -347,7 +346,7 @@
             <div class="scanTechniques">
                 <h1 id="9">Useful NSE Script Examples ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="http-sitemap-generator">Generates an HTTP site map (URL list)</label>
                   <input class="adelete" type="checkbox" id="Pn -script=http-sitemap-generator scanme.nmap.org" onchange="nseuseful(this)">
                 </div>
@@ -389,7 +388,7 @@
             <div class="scanTechniques">
                 <h1 id="10">Firewall / IDS Evasion and Spoofing ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="f">-f (Requested scan (including ping scans) use tiny fragmented IP packets. Harder for packet filters)</label>
                   <input type="checkbox" id="f" onchange="updateScanOptions(this)">
                 </div>
@@ -430,7 +429,7 @@
             <div class="scanTechniques">
                 <h1 id="11">Output ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="oN">-oN (Normal output to the file normal.file)</label>
                   <input type="checkbox" id="oN normal.file" onchange="updateScanOptions(this)">
                 </div>
@@ -502,7 +501,7 @@
             <div class="scanTechniques" id="12conatin">
                 <h1 id="12">Helpful Nmap Output examples ></h1>
               
-                <div class="checkboxes">
+                <div class="checkboxes mtop10">
                   <label for="nmap-p80-sV-oG--open-192.168.1.1/24-grep-open">Scan for web servers and grep to show which IPs are running web servers</label>
                   <input class="adelete" type="checkbox" id='nmap -p80 -sV -oG - -open 192.168.1.1/24 | grep open' onchange="outcommand(this)">
                 </div>
