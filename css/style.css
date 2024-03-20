@@ -7,27 +7,12 @@ body {
     background-color: #F1F1F1;
 }
 
-@media screen and (max-width: 1630px){
-    body {
-        background-size: 200%;
-    }
-}
-
-@media screen and (max-width: 1240px){
-    body {
-        background-size: 250%;
-    }
-}
-
-@media screen and (max-width: 1100px){
-    body {
-        background-size: 300%;
-    }
-}
-
 @media screen and (max-width: 900px){
     body {
         height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -210,7 +195,13 @@ label {
 /* phone format */
 
 .phone-format {
+    margin: 0;
     width: 80%;
+    background-color: #8861ff86;
+    border: solid 1px #8B63FF;
+
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .phone-format h1, h3, p, a {
@@ -224,7 +215,7 @@ label {
 }
 
 @media screen and (max-width: 900px) {
-    .title, .input, .checkboxes-container {
+    .container {
         display: none;
     }
 }
