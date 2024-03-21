@@ -104,3 +104,6 @@ function Reset() {
     var scanOptionsInput = document.getElementById("myInput");
     scanOptionsInput.value = "nmap 192.168.1.1";
 }
+
+  
+  

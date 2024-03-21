@@ -1,0 +1,212 @@
+body {
+    padding: 0;
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+
+    background-color: #171717;
+}
+
+@media screen and (max-width: 900px){
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* main container */
+
+.container {
+    padding: 70px 150px;
+}
+
+/* title */
+
+.title {
+}
+
+.title h1 {
+    font-size: 100px;
+    margin: 0;
+    font-weight: 400;
+    color: white;
+}
+
+/* middle input */
+
+.input {
+    display: flex;
+    border: solid 1px #8B63FF;
+    border-radius: 10px;
+
+    margin: 50px 0;
+}
+
+.input input {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: transparent;
+
+    color: white;
+
+    padding: 20px 30px;
+
+    font-size: 20px;
+
+    border: none;
+
+    border-radius: 10px 0px 0px 10px;
+}
+
+.input input:focus {
+    outline: none;
+}
+
+.input textarea::-webkit-scrollbar {
+    width: 12px;
+}
+
+.input textarea::-webkit-scrollbar-thumb {
+    background-color: #606060;
+    border-radius: 6px;
+}
+
+.input textarea::-webkit-scrollbar-track {
+    background-color: #404040;
+    border-radius: 6px;
+}
+
+.input textarea:focus {
+    outline: none;
+}
+
+/* copy */
+
+.copy {
+    background-color: transparent;
+    -webkit-backdrop-filter: saturate(200%) blur(5px);
+    backdrop-filter: saturate(180%) blur(20px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0px 10px 10px 0px;
+
+    gap: 5px;
+
+    padding: 10px;
+}
+
+.copy button {
+    height: 100%;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+
+    background-color: transparent;
+}
+
+/* checknoxes */
+
+.checkboxes-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.scanTechniques {
+    padding: 10px 20px;
+
+    width: calc(100% - 40px);
+
+    background-color: #8861ff1c;
+    border: solid 1px #8B63FF;
+    margin: auto;
+
+    border-radius: 10px;
+}
+
+.scanTechniques h1 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+
+    cursor: pointer;
+}
+
+.scanTechniques .checkboxes {
+    display: none;
+    padding: 0 50px;
+    justify-content: space-between;
+}
+
+.mtop10 {
+    margin-top: 10px;
+}
+
+label {
+    color: white;
+    font-size: 19px;
+}
+
+/* copy message */
+
+.copy-message {
+    display: none;
+
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    padding: 20px;
+    border-radius: 20px;
+
+    max-width: 20%;
+
+    background-color: #8861ffe1;
+    border: solid 1px #8B63FF;
+}
+
+.copy-message h3 {
+    margin: 0;
+}
+
+.copy-message p {
+    margin: 0;
+}
+
+/* phone format */
+
+.phone-format {
+    margin: 0;
+    width: 80%;
+    background-color: #8861ff86;
+    border: solid 1px #8B63FF;
+
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.phone-format h1, h3, p, a {
+    color: white;
+}
+
+@media screen and (min-width: 900px) {
+    .phone-format {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        display: none;
+    }
+}

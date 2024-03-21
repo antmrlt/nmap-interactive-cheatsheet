@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Cheatsheet</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/light-mode.css" id="custom-css">
+    <script src="script/css-mode.js"></script>
     <link rel="shortcut icon" href="image/icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/switch.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,8 @@
         <div class="input">
             <input type="text" name="" id="myInput" value="nmap 192.168.1.1" readonly></input>
             <div class="copy">
-              <button onclick="Copy()"><img src="svg/copy.svg" alt=""></button>
-              <button onclick="Reset()"><img src="svg/reset.svg" alt=""></button>
+              <button onclick="Copy()"><img id="copyButton" src="svg/copy.svg" alt=""></button>
+              <button onclick="Reset()"><img id="resetButton" src="svg/reset.svg" alt=""></button>
             </div>
         </div>
         <div class="checkboxes-container">
