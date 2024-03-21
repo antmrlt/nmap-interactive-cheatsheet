@@ -85,12 +85,6 @@ body {
     outline: none;
 }
 
-@media screen and (max-width: 1200px) {
-    .input input {
-        width: 700px;
-    }
-}
-
 /* copy */
 
 .copy {
@@ -158,12 +152,6 @@ body {
 
 label {
     font-size: 19px;
-}
-
-@media screen and (max-width: 1200px) {
-    .scanTechniques {
-        width: 700px;
-    }
 }
 
 /* copy message */
