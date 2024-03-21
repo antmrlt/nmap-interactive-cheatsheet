@@ -15,8 +15,7 @@ if (window.matchMedia) {
 
     const updateSvg = (darkModeEnabled) => {
         const copyButton = document.getElementById('copyButton');
-        const resetButton = document.getE
-        lementById('resetButton');
+        const resetButton = document.getElementById('resetButton');
 
         if (darkModeEnabled) {
             copyButton.src = 'svg/white-copy.svg';
