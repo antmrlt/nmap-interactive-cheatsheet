@@ -172,17 +172,17 @@
               
                 <div class="checkboxes">
                   <label for="sV-version-intensity">-sV -version-intensity (Intensity level 0 to 9. Higher number increases possibility of correctness)</label>
-                  <input type="checkbox" id="sV -version-intensity" onchange="updateScanOptions(this)">
+                  <input type="checkbox" id="sV --version-intensity" onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
                   <label for="sV-version-light">-sV -version-light (Enable light mode. Lower possibility of correctness. Faster)</label>
-                  <input type="checkbox" id="sV -version-light" onchange="updateScanOptions(this)">
+                  <input type="checkbox" id="sV --version-light" onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
                   <label for="sV-version-all">-sV -version-all (Enable intensity level 9. Higher possibility of correctness. Slower)</label>
-                  <input type="checkbox" id="sV -version-all" onchange="updateScanOptions(this)">
+                  <input type="checkbox" id="sV --version-all" onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
@@ -311,33 +311,33 @@
                 </div>
               
                 <div class="checkboxes">
-                  <label for="script default">-script default (Scan with default NSE scripts. Considered useful for discovery and safe)</label>
-                  <input type="checkbox" id="script default" onchange="updateScanOptions(this)">
+                  <label for="script default">--script default (Scan with default NSE scripts. Considered useful for discovery and safe)</label>
+                  <input type="checkbox" id="-script default" onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
-                  <label for="script">-script (Scan with a single script. Example banner)</label>
-                  <input type="checkbox" id="script=banner" onchange="updateScanOptions(this)">
+                  <label for="script">--script (Scan with a single script. Example banner)</label>
+                  <input type="checkbox" id="-script=banner" onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
-                  <label for="script=http*">-script=http* (Scan with a wildcard. Example http)</label>
-                  <input type="checkbox" id="script=http*" onchange="updateScanOptions(this)">
+                  <label for="script=http*">--script=http* (Scan with a wildcard. Example http)</label>
+                  <input type="checkbox" id="-script=http*" onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
-                  <label for="script=http,banner">-script=http,banner (Scan with two scripts. Example http and banner)</label>
-                  <input type="checkbox" id="script=http,banner" onchange="updateScanOptions(this)">
+                  <label for="script=http,banner">--script=http,banner (Scan with two scripts. Example http and banner)</label>
+                  <input type="checkbox" id="-script=http,banner" onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
-                  <label for="script not intrusive">-script "not intrusive" (Scan default, but remove intrusive scripts)</label>
-                  <input type="checkbox" id='script "not intrusive"' onchange="updateScanOptions(this)">
+                  <label for="script not intrusive">--script "not intrusive" (Scan default, but remove intrusive scripts)</label>
+                  <input type="checkbox" id='-script "not intrusive"' onchange="updateScanOptions(this)">
                 </div>
               
                 <div class="checkboxes">
-                  <label for="script-args">-script-args (NSE script with arguments)</label>
-                  <input type="checkbox" id="script snmp-sysdescr -script-args snmpcommunity=admin 192.168.1.1" onchange="updateScanOptions(this)">
+                  <label for="script-args">--script-args (NSE script with arguments)</label>
+                  <input type="checkbox" id="-script snmp-sysdescr -script-args snmpcommunity=admin 192.168.1.1" onchange="updateScanOptions(this)">
                 </div>
             </div>  
 
