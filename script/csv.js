@@ -57,7 +57,7 @@ fetch('data.csv')
     for (let i = 1; i < parsedCSV.length; i++) {
 
       if (memory !== parsedCSV[i][0]){
-        scanTechniquesContainer = document.createElement('div'); // Initialize scanTechniquesContainer
+        scanTechniquesContainer = document.createElement('div');
         scanTechniquesContainer.className = 'scanTechniques';
 
         const techniqueHeader = document.createElement('h1');
