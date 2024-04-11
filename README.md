@@ -14,4 +14,4 @@ Access via this url [https://antmrlt.github.io/nmap-interactive-cheatsheet/](htt
 - Always ensure that you have the right permissions before scanning any network or system.
 - Use Nmap responsibly and adhere to applicable laws and regulations.  
 
-Feel free to contribute to this cheatsheet by creating pull requests or suggesting improvements. Happy scanning!
+Feel free to contribute to this cheatsheet by creating pull requests or suggesting improvements via the csv file. Happy scanning!

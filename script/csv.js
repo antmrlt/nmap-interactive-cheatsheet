@@ -35,7 +35,9 @@ function parseCSV(str) {
   return arr;
 }
 
-// Fetch the CSV file
+let memory = null;
+let idcompteur = 1;
+
 fetch('data.csv')
   .then(response => {
     if (!response.ok) {
@@ -46,6 +48,57 @@ fetch('data.csv')
   .then(csvData => {
     // Parse the CSV data
     const parsedCSV = parseCSV(csvData);
+
+    // Clear previous content
+    document.getElementsByClassName('checkboxes-container')[0].innerHTML = '';
+
+    let scanTechniquesContainer; // Declare scanTechniquesContainer outside the loop
+
+    for (let i = 1; i < parsedCSV.length; i++) {
+
+      if (memory !== parsedCSV[i][0]){
+        scanTechniquesContainer = document.createElement('div'); // Initialize scanTechniquesContainer
+        scanTechniquesContainer.className = 'scanTechniques';
+
+        const techniqueHeader = document.createElement('h1');
+        techniqueHeader.textContent = parsedCSV[i][0];
+        techniqueHeader.id = idcompteur;
+        scanTechniquesContainer.appendChild(techniqueHeader);
+
+        idcompteur += 1;
+      }
+
+      for (let y = 1; y < parsedCSV[i].length; y++) {
+        const checkboxDiv = document.createElement('div');
+        if (parsedCSV[i][0] != memory) {
+          checkboxDiv.className = 'checkboxes mtop10';
+          memory = parsedCSV[i][0];
+        } else {
+          checkboxDiv.className = 'checkboxes';
+        }
+
+        const label = document.createElement('label');
+        label.setAttribute('for', parsedCSV[i][2]);
+        label.textContent = parsedCSV[i][1];
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = parsedCSV[i][2];
+        checkbox.onchange = function() {
+          updateScanOptions(this);
+        };
+
+        checkboxDiv.appendChild(label);
+        checkboxDiv.appendChild(checkbox);
+        scanTechniquesContainer.appendChild(checkboxDiv);
+      }
+
+      // Append the last scanTechniquesContainer if it exists
+      if (scanTechniquesContainer) {
+        document.getElementsByClassName('checkboxes-container')[0].appendChild(scanTechniquesContainer);
+        console.log(document.getElementsByClassName('checkboxes-container')[0])
+      }
+    }
     
     // Output the parsed CSV
     console.log(parsedCSV);
@@ -53,3 +106,4 @@ fetch('data.csv')
   .catch(error => {
     console.error('There was a problem fetching the CSV file:', error);
   });
+
