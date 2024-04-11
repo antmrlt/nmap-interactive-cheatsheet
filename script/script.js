@@ -8,8 +8,6 @@ function toggleCheckboxes(headerId) {
     }
 }
 
-console.log(idcompteur + ' - script.js')
-
 for (let i = 1; i <= 13 - 1; i++) {
     const header = document.getElementById(i);
 
