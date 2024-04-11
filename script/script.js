@@ -13,9 +13,11 @@ for (let i = 1; i <= idcompteur - 1; i++) {
 
     header.addEventListener('click', () => {
         toggleCheckboxes(i);
-        console.log('click' + i + idcompteur)
+        console.log('click' + i + idcompteur);
     });
 }
+
+toggleCheckboxes(1);
   
 /* Append parameter */
 
