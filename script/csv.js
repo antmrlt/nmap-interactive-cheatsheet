@@ -96,12 +96,9 @@ fetch('data.csv')
       // Append the last scanTechniquesContainer if it exists
       if (scanTechniquesContainer) {
         document.getElementsByClassName('checkboxes-container')[0].appendChild(scanTechniquesContainer);
-        console.log(document.getElementsByClassName('checkboxes-container')[0])
       }
     }
     
-    // Output the parsed CSV
-    console.log(parsedCSV);
   })
   .catch(error => {
     console.error('There was a problem fetching the CSV file:', error);
