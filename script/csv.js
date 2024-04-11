@@ -66,6 +66,7 @@ fetch('data.csv')
         scanTechniquesContainer.appendChild(techniqueHeader);
 
         idcompteur += 1;
+        console.log('incrementation idcompteur' + idcompteur)
       }
 
       for (let y = 1; y < parsedCSV[i].length; y++) {
