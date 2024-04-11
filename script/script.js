@@ -10,7 +10,7 @@ function toggleCheckboxes(headerId) {
 
 console.log(idcompteur + ' - script.js')
 
-for (let i = 1; i <= idcompteur - 1; i++) {
+for (let i = 1; i <= 13 - 1; i++) {
     const header = document.getElementById(i);
 
     header.addEventListener('click', () => {
