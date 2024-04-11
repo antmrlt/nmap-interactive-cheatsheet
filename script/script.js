@@ -8,13 +8,13 @@ function toggleCheckboxes(headerId) {
     }
 }
 
+for (let i = 1; i <= idcompteur; i++) {
+    const header = document.getElementById(i);
 
-const header = document.getElementById(idcompteur);
-
-header.addEventListener('click', () => {
-    toggleCheckboxes(idcompteur);
-});
-
+    header.addEventListener('click', () => {
+        toggleCheckboxes(i);
+    });
+}
   
 /* Append parameter */
 
