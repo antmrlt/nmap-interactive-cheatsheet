@@ -1,87 +1,86 @@
 h1,label,id
-Scan Techniques >,-sS (TCP SYN port scan (Default)),sS
-Scan Techniques >,-sT (TCP connect port scan (Default without root privilege)),sT
-Scan Techniques >,-sU (UDP port scan),sU
-Scan Techniques >,-sA (TCP ACK port scan),sA
-Scan Techniques >,-sW (TCP Window port scan),sW
-Scan Techniques >,-sM (TCP Maimon port scan),sM
-Host Discovery >,-sL (No Scan. List targets only),sL
-Host Discovery >,-sn (Disable port scanning. Host discovery only.),sn
-Host Discovery >,-Pn (Disable host discovery. Port scan only.),Pn
-Host Discovery >,-PS (TCP SYN discovery on port x. Port 80 by default),PS
-Host Discovery >,-PA (TCP ACK discovery on port x. Port 80 by default),PA
-Host Discovery >,-PU (UDP discovery on port x. Port 40125 by default),PU
-Host Discovery >,-PR (ARP discovery on local network),PR
-Host Discovery >,-n (Never do DNS resolution),n
-Port Specification >,-p <port number> (Port scan for port <port number>),p 80
-Port Specification >,-p <start port>-<end port> (Port range),p 80-8080
-Port Specification >,"-p 'port1', 'port2', ..., 'portn' (Port scan multiple TCP and UDP ports)","p U:53,T:21-25,80"
-Port Specification >,-p- (Port scan all ports from 1 to 65535),p-
-Port Specification >,-p 'service name' (Port scan from service name),p https
-Port Specification >,-F (Fast port scan (100 ports)),F
-Port Specification >,-top-ports <number of ports> (Port scan the top <number of ports>),top-ports
-Port Specification >,-p-65535 (Leaving off initial port in range makes the scan start at port 1),p-65535
-Port Specification >,-p0- (Leaving off end port in range makes the scan go through to port 65535),p0-
-Service and Version Detection >,-sV (Attempts to determine the version of the service running on port),sV
-Service and Version Detection >,-sV -version-intensity (Intensity level 0 to 9. Higher number increases possibility of correctness),sV --version-intensity
-Service and Version Detection >,-sV -version-light (Enable light mode. Lower possibility of correctness. Faster),sV --version-light
-Service and Version Detection >,-sV -version-all (Enable intensity level 9. Higher possibility of correctness. Slower),sV --version-all
-Service and Version Detection >,"-A (Enables OS detection, version detection, script scanning, and traceroute)",A
-OS Detection >,-O (Remote OS detection using TCP/IP stack fingerprinting),O
-OS Detection >,-O -osscan-limit (If at least one open and one closed TCP port are not found it will not try OS detection against host),O -osscan-limit
-OS Detection >,-O -osscan-guess (Makes Nmap guess more aggressively),O -osscan-guess
-OS Detection >,-O -max-os-tries (Set the maximum number x of OS detection tries against a target),O -max-os-tries 1
-OS Detection >,"-A (Enables OS detection, version detection, script scanning, and traceroute)",A
-Timing and Performance >,-T0 (Paranoid (0) Intrusion Detection System evasion),T0
-Timing and Performance >,-T1 (Sneaky (1) Intrusion Detection System evasion),T1
-Timing and Performance >,-T2 (Polite (2) slows down the scan to use less bandwidth and use less target machine resources),T2
-Timing and Performance >,-T3 (Normal (3) which is default speed),T3
-Timing and Performance >,-T4 (Aggressive (4) speeds scans; assumes you are on a reasonably fast and reliable network),T4
-Timing and Performance >,-T5 (Insane (5) speeds scan; assumes you are on an extraordinarily fast network),T5
-Timing and Performance Switches >,-host-timeout 'time' (Give up on target after this long),host-timeout 1s
-Timing and Performance Switches >,-min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout 'time' (Specifies probe round trip time),min-rtt-timeout 1s
-Timing and Performance Switches >,-min-hostgroup/max-hostgroup 'size' (50;1024) (Parallel host scan group sizes),min-hostgroup 50
-Timing and Performance Switches >,-min-parallelism/max-parallelism 'numprobes' (10; 1) (Probe parallelization),min-parallelism 10
-Timing and Performance Switches >,-max-retries 'tries' (Specify the maximum number of port scan probe retransmissions),max-retries 3
-Timing and Performance Switches >,-min-rate 'number' (Send packets no slower than 'number' per second),min-rate 100
-Timing and Performance Switches >,-max-rate 'number' Send packets no faster than 'number' per second,max-rate 100
-NSE Scripts >,-sC (Scan with default NSE scripts. Considered useful for discovery and safe),sC
-NSE Scripts >,--script default (Scan with default NSE scripts. Considered useful for discovery and safe),-script default
-NSE Scripts >,--script (Scan with a single script. Example banner),-script=banner
-NSE Scripts >,--script=http* (Scan with a wildcard. Example http),-script=http*
-NSE Scripts >,"--script=http,banner (Scan with two scripts. Example http and banner)","-script=http,banner"
-NSE Scripts >,"--script 'not intrusive' (Scan default, but remove intrusive scripts)",-script "not intrusive"
-NSE Scripts >,--script-args (NSE script with arguments),-script snmp-sysdescr -script-args snmpcommunity=admin 192.168.1.1
-Useful NSE Script Examples >,Generates an HTTP site map (URL list),Pn -script=http-sitemap-generator scanme.nmap.org
-Useful NSE Script Examples >,Performs a quick scan of 1000 random web servers (without ping),"n -Pn -p 80 -open -sV -vvv -script banner,http-title -iR 1000"
-Useful NSE Script Examples >,Attempts to brute force DNS hostnames guessing subdomains,Pn -script=dns-brute domain.com
-Useful NSE Script Examples >,Performs a safe scan of SMB services on 192.168.1.1,"n -Pn -vv -O -sV -script smb-enum*,smb-ls,smb-mbenum,smb-os-discovery,smb-s*,smb-vuln*,smbv2* -vv 192.168.1.1"
-Useful NSE Script Examples >,Performs a whois query on the domain name "domain.com",script whois*-domain.com
-Useful NSE Script Examples >,Checks for cross-site scripting vulnerabilities on the web server at "scanme.nmap.org",p80 -script http-unsafe-output-escaping scanme.nmap.org
-Useful NSE Script Examples >,Checks for SQL injections on the web server at "scanme.nmap.org",p80 -script http-sql-injection scanme.nmap.org
-Firewall / IDS Evasion and Spoofing >,-f (Requested scan (including ping scans) use tiny fragmented IP packets. Harder for packet filters),f
-Firewall / IDS Evasion and Spoofing >,-mtu (Set your own offset size),mtu
-Firewall / IDS Evasion and Spoofing >,-D (Send scans from spoofed IPs),D
-Firewall / IDS Evasion and Spoofing >,-S (Scan Facebook from Microsoft (-e eth0 -Pn may be required)),S
-Firewall / IDS Evasion and Spoofing >,-g (Use given source port number),g
-Firewall / IDS Evasion and Spoofing >,-proxies (Relay connections through HTTP/SOCKS4 proxies),proxies
-Firewall / IDS Evasion and Spoofing >,-data-length (Appends random data to sent packets),data-length 200
-Output >,-oN (Normal output to the file normal.file),oN normal.file
-Output >,-oX (XML output to the file xml.file),oX xml.file
-Output >,-oG (Grepable output to the file grep.file),oG grep.file
-Output >,-oA (Output in the three major formats at once),oA results
-Output >,"-oG - (Grepable output to the screen. -oN -, -oX - also usable)",oG -
-Output >,-append-output (Append a scan to a previous scan file),192.168.1.1 -oN file.file -append-output
-Output >,-v (Increase the verbosity level (use -vv or more for greater effect)),v
-Output >,-d (Increase debugging level (use -dd or more for greater effect)),d
-Output >,"-reason (Display the reason a port is in a particular state, same output as -vv)",reason
-Output >,-open (Only show open (or possibly open) ports),open
-Output >,-packet-trace (Show all packets sent and received),packet-trace
-Output >,-iflist (Shows the host interfaces and routes),iflist
-Output >,-resume (Resume a scan),resume results.file
-Helpful Nmap Output examples >,"Scan for web servers and grep to show which IPs are running web servers",nmap -p80 -sV -oG - -open 192.168.1.1/24 | grep open
-Helpful Nmap Output examples >,"Generate a list of the IPs of live hosts",iR 10 -n -oX out.xml | grep ""Nmap"" | cut -d "" "" -f5 > live-hosts.txt
-Helpful Nmap Output examples >,"Append IP to the list of live hosts",nmap -iR 10 -n -oX out2.xml | grep ""Nmap"" | cut -d "" "" -f5 >> live-hosts.txt
-Helpful Nmap Output examples >,Compare output from nmap using the ndiff,ndiff scanl.xml scan2.xml
-Helpful Nmap Output examples >,Convert nmap xml files to html files,xsltproc nmap.xml -o nmap.html
-Helpful Nmap Output examples >,Reverse sorted list of how often ports turn up,grep "" open "" results.nmap | sed -r ‘s/ +/ /g’ | sort | uniq -c | sort -rn | less
+Scan Techniques,-sS (TCP SYN port scan (Default)),sS
+Scan Techniques,-sT (TCP connect port scan (Default without root privilege)),sT
+Scan Techniques,-sU (UDP port scan),sU
+Scan Techniques,-sA (TCP ACK port scan),sA
+Scan Techniques,-sW (TCP Window port scan),sW
+Scan Techniques,-sM (TCP Maimon port scan),sM
+Host Discovery,-sL (No Scan. List targets only),sL
+Host Discovery,-sn (Disable port scanning. Host discovery only.),sn
+Host Discovery,-Pn (Disable host discovery. Port scan only.),Pn
+Host Discovery,-PS (TCP SYN discovery on port x. Port 80 by default),PS
+Host Discovery,-PA (TCP ACK discovery on port x. Port 80 by default),PA
+Host Discovery,-PU (UDP discovery on port x. Port 40125 by default),PU
+Host Discovery,-PR (ARP discovery on local network),PR
+Host Discovery,-n (Never do DNS resolution),n
+Port Specification,-p <port number> (Port scan for port <port number>),p 80
+Port Specification,-p <start port>-<end port> (Port range),p 80-8080
+Port Specification,"-p 'port1', 'port2', ..., 'portn' (Port scan multiple TCP and UDP ports)",p U:53,T:21-25,80
+Port Specification,-p- (Port scan all ports from 1 to 65535),p-
+Port Specification,-p 'service name' (Port scan from service name),p https
+Port Specification,-F (Fast port scan (100 ports)),F
+Port Specification,-top-ports <number of ports> (Port scan the top <number of ports>),top-ports
+Port Specification,-p-65535 (Leaving off initial port in range makes the scan start at port 1),p-65535
+Service and Version Detection,-sV (Attempts to determine the version of the service running on port),sV
+Service and Version Detection,-sV -version-intensity (Intensity level 0 to 9. Higher number increases possibility of correctness),sV --version-intensity
+Service and Version Detection,-sV -version-light (Enable light mode. Lower possibility of correctness. Faster),sV --version-light
+Service and Version Detection,-sV -version-all (Enable intensity level 9. Higher possibility of correctness. Slower),sV --version-all
+Service and Version Detection,"-A (Enables OS detection, version detection, script scanning, and traceroute)",A
+OS Detection,-O (Remote OS detection using TCP/IP stack fingerprinting),O
+OS Detection,-O -osscan-limit (If at least one open and one closed TCP port are not found it will not try OS detection against host),O -osscan-limit
+OS Detection,-O -osscan-guess (Makes Nmap guess more aggressively),O -osscan-guess
+OS Detection,-O -max-os-tries (Set the maximum number x of OS detection tries against a target),O -max-os-tries 1
+OS Detection,"-A (Enables OS detection, version detection, script scanning, and traceroute)",A
+Timing and Performance,-T0 (Paranoid (0) Intrusion Detection System evasion),T0
+Timing and Performance,-T1 (Sneaky (1) Intrusion Detection System evasion),T1
+Timing and Performance,-T2 (Polite (2) slows down the scan to use less bandwidth and use less target machine resources),T2
+Timing and Performance,-T3 (Normal (3) which is default speed),T3
+Timing and Performance,-T4 (Aggressive (4) speeds scans; assumes you are on a reasonably fast and reliable network),T4
+Timing and Performance,-T5 (Insane (5) speeds scan; assumes you are on an extraordinarily fast network),T5
+Timing and Performance Switches,-host-timeout 'time' (Give up on target after this long),host-timeout 1s
+Timing and Performance Switches,-min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout 'time' (Specifies probe round trip time),min-rtt-timeout 1s
+Timing and Performance Switches,-min-hostgroup/max-hostgroup 'size' (50;1024) (Parallel host scan group sizes),min-hostgroup 50
+Timing and Performance Switches,-min-parallelism/max-parallelism 'numprobes' (10; 1) (Probe parallelization),min-parallelism 10
+Timing and Performance Switches,-max-retries 'tries' (Specify the maximum number of port scan probe retransmissions),max-retries 3
+Timing and Performance Switches,-min-rate 'number' (Send packets no slower than 'number' per second),min-rate 100
+Timing and Performance Switches,-max-rate 'number' Send packets no faster than 'number' per second,max-rate 100
+NSE Scripts,-sC (Scan with default NSE scripts. Considered useful for discovery and safe),sC
+NSE Scripts,--script default (Scan with default NSE scripts. Considered useful for discovery and safe),-script default
+NSE Scripts,--script (Scan with a single script. Example banner),-script=banner
+NSE Scripts,--script=http* (Scan with a wildcard. Example http),-script=http*
+NSE Scripts,"--script=http,banner (Scan with two scripts. Example http and banner)",-script=http,banner
+NSE Scripts,"--script 'not intrusive' (Scan default, but remove intrusive scripts)",-script "not intrusive"
+NSE Scripts,--script-args (NSE script with arguments),-script snmp-sysdescr -script-args snmpcommunity=admin 192.168.1.1
+Useful NSE Script Examples,Generates an HTTP site map (URL list),Pn -script=http-sitemap-generator scanme.nmap.org
+Useful NSE Script Examples,Performs a quick scan of 1000 random web servers (without ping),"n -Pn -p 80 -open -sV -vvv -script banner,http-title -iR 1000"
+Useful NSE Script Examples,Attempts to brute force DNS hostnames guessing subdomains,Pn -script=dns-brute domain.com
+Useful NSE Script Examples,Performs a safe scan of SMB services on 192.168.1.1,"n -Pn -vv -O -sV -script smb-enum*,smb-ls,smb-mbenum,smb-os-discovery,smb-s*,smb-vuln*,smbv2* -vv 192.168.1.1"
+Useful NSE Script Examples,Performs a whois query on the domain name "domain.com",script whois*-domain.com
+Useful NSE Script Examples,Checks for cross-site scripting vulnerabilities on the web server at "scanme.nmap.org",p80 -script http-unsafe-output-escaping scanme.nmap.org
+Useful NSE Script Examples,Checks for SQL injections on the web server at "scanme.nmap.org",p80 -script http-sql-injection scanme.nmap.org
+Firewall / IDS Evasion and Spoofing,-f (Requested scan (including ping scans) use tiny fragmented IP packets. Harder for packet filters),f
+Firewall / IDS Evasion and Spoofing,-mtu (Set your own offset size),mtu
+Firewall / IDS Evasion and Spoofing,-D (Send scans from spoofed IPs),D
+Firewall / IDS Evasion and Spoofing,-S (Scan Facebook from Microsoft (-e eth0 -Pn may be required)),S
+Firewall / IDS Evasion and Spoofing,-g (Use given source port number),g
+Firewall / IDS Evasion and Spoofing,-proxies (Relay connections through HTTP/SOCKS4 proxies),proxies
+Firewall / IDS Evasion and Spoofing,-data-length (Appends random data to sent packets),data-length 200
+Output,-oN (Normal output to the file normal.file),oN normal.file
+Output,-oX (XML output to the file xml.file),oX xml.file
+Output,-oG (Grepable output to the file grep.file),oG grep.file
+Output,-oA (Output in the three major formats at once),oA results
+Output,"-oG - (Grepable output to the screen. -oN -, -oX - also usable)",oG -
+Output,-append-output (Append a scan to a previous scan file),192.168.1.1 -oN file.file -append-output
+Output,-v (Increase the verbosity level (use -vv or more for greater effect)),v
+Output,-d (Increase debugging level (use -dd or more for greater effect)),d
+Output,"-reason (Display the reason a port is in a particular state, same output as -vv)",reason
+Output,-open (Only show open (or possibly open) ports),open
+Output,-packet-trace (Show all packets sent and received),packet-trace
+Output,-iflist (Shows the host interfaces and routes),iflist
+Output,-resume (Resume a scan),resume results.file
+Helpful Nmap Output examples,"Scan for web servers and grep to show which IPs are running web servers",nmap -p80 -sV -oG - -open 192.168.1.1/24 | grep open
+Helpful Nmap Output examples,"Generate a list of the IPs of live hosts",iR 10 -n -oX out.xml | grep ""Nmap"" | cut -d "" "" -f5 > live-hosts.txt
+Helpful Nmap Output examples,"Append IP to the list of live hosts",nmap -iR 10 -n -oX out2.xml | grep ""Nmap"" | cut -d "" "" -f5 >> live-hosts.txt
+Helpful Nmap Output examples,Compare output from nmap using the ndiff,ndiff scanl.xml scan2.xml
+Helpful Nmap Output examples,Convert nmap xml files to html files,xsltproc nmap.xml -o nmap.html
+Helpful Nmap Output examples,Reverse sorted list of how often ports turn up,grep "" open "" results.nmap | sed -r ‘s/ +/ /g’ | sort | uniq -c | sort -rn | less
