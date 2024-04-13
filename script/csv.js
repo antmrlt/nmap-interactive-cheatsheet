@@ -66,7 +66,6 @@ fetch('data.csv')
         scanTechniquesContainer.appendChild(techniqueHeader);
 
         idcompteur += 1;
-        console.log('incrementation idcompteur' + idcompteur)
       }
 
       const checkboxDiv = document.createElement('div');

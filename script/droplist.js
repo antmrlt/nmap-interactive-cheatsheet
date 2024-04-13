@@ -8,11 +8,10 @@ function toggleCheckboxes(headerId) {
     }
 }
 
-for (let i = 1; i <= 13 - 1; i++) {
+for (let i = 1; i <= idcompteur -1; i++) {
     const header = document.getElementById(i);
 
     header.addEventListener('click', () => {
         toggleCheckboxes(i);
-        console.log('click')
     });
 }
