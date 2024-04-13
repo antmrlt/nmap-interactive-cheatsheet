@@ -69,30 +69,30 @@ fetch('data.csv')
         console.log('incrementation idcompteur' + idcompteur)
       }
 
-      for (let y = 1; y < parsedCSV[i].length; y++) {
-        const checkboxDiv = document.createElement('div');
-        if (parsedCSV[i][0] != memory) {
-          checkboxDiv.className = 'checkboxes mtop10';
-          memory = parsedCSV[i][0];
-        } else {
-          checkboxDiv.className = 'checkboxes';
-        }
-
-        const label = document.createElement('label');
-        label.setAttribute('for', parsedCSV[i][2]);
-        label.textContent = parsedCSV[i][1];
-
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = parsedCSV[i][2];
-        checkbox.onchange = function() {
-          updateScanOptions(this);
-        };
-
-        checkboxDiv.appendChild(label);
-        checkboxDiv.appendChild(checkbox);
-        scanTechniquesContainer.appendChild(checkboxDiv);
+      const checkboxDiv = document.createElement('div');
+      if (parsedCSV[i][0] != memory) {
+        checkboxDiv.className = 'checkboxes mtop10';
+        checkboxDiv.style = 'display:none';
+        memory = parsedCSV[i][0];
+      } else {
+        checkboxDiv.className = 'checkboxes';
+        checkboxDiv.style = 'display:none';
       }
+
+      const label = document.createElement('label');
+      label.setAttribute('for', parsedCSV[i][2]);
+      label.textContent = parsedCSV[i][1];
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = parsedCSV[i][2];
+      checkbox.onchange = function() {
+        updateScanOptions(this);
+      };
+
+      checkboxDiv.appendChild(label);
+      checkboxDiv.appendChild(checkbox);
+      scanTechniquesContainer.appendChild(checkboxDiv);
 
       // Append the last scanTechniquesContainer if it exists
       if (scanTechniquesContainer) {
