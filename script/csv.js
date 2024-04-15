@@ -63,6 +63,8 @@ fetch('data.csv')
         const techniqueHeader = document.createElement('h1');
         techniqueHeader.textContent = parsedCSV[i][0];
         techniqueHeader.id = idcompteur;
+        techniqueHeader.setAttribute('onclick', "toggleCheckboxes(" + idcompteur + ")");
+
         scanTechniquesContainer.appendChild(techniqueHeader);
 
         idcompteur += 1;
